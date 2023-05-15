@@ -1,24 +1,70 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## usersテーブル
 
-Things you may want to cover:
+| Column             | Type       | Options                       |
+|--------------------|------------|-------------------------------|
+| nickname           | string     | null: false                   |
+| email              | string     | null: false, unique: true     |
+| encrypted_password | string     | null: false                   |
+| family_name_kanji  | string     | null: false                   |
+| first_name_kanji   | string     | null: false                   |
+| family_name_kana   | string     | null: false                   |
+| first_name_kana    | string     | null: false                   |
+| birth_year         | enum       | null: false                   |
+| birth_month        | enum       | null: false                   |
+| birth_date         | enum       | null: false                   |
 
-* Ruby version
 
-* System dependencies
+### Association
 
-* Configuration
+- has_many :items
+- has_many :records
 
-* Database creation
+## itemsテーブル
 
-* Database initialization
+| Column             | Type       | Options                        |
+|--------------------|------------|--------------------------------|
+| name               | string     | null: false                    |
+| detail             | text       | null: false                    |
+| category           | enum       | null: false                    |
+| condition          | enum       | null: false                    |
+| delivery_fee       | enum       | null: false                    |
+| region             | enum       | null: false                    |
+| delivery_within    | enum       | null: false                    |
+| price              | string     | null: false                    |
+| user               | references | null: false, foreign_key: true |
 
-* How to run the test suite
+### Association
 
-* Services (job queues, cache servers, search engines, etc.)
+- belongs_to :users
+- has_one :records
 
-* Deployment instructions
+## recordsテーブル
 
-* ...
+| Column             | Type       | Options                        |
+|--------------------|------------|--------------------------------|
+| user               | references | null: false, foreign_key: true |
+| item               | references | null: false, foreign_key: true |
+
+### Association
+
+- belongs_to :users
+- belongs_to :items
+- has_one :deliveries
+
+## deliveriesテーブル
+
+| Column             | Type       | Options                        |
+|--------------------|------------|--------------------------------|
+| post_code          | string     | null: false                    |
+| address1           | string     | null: false                    |
+| address2           | string     | null: false                    |
+| address3           | text       | null: false                    |
+| address4           | text       | null: true                     |
+| phone              | string     | null: false                    |
+| record             | references | null: false, foreign_key: true |
+
+### Association
+
+- belongs_to :records

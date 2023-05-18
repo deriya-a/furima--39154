@@ -11,7 +11,7 @@
 | first_name_kanji   | string     | null: false                   |
 | family_name_kana   | string     | null: false                   |
 | first_name_kana    | string     | null: false                   |
-| birthday           | data       | null: false                   |
+| birthday           | date       | null: false                   |
 
 
 
@@ -26,11 +26,11 @@
 |--------------------|------------|--------------------------------|
 | name               | string     | null: false                    |
 | detail             | text       | null: false                    |
-| category_id        | integer    | null: false                    |
-| condition_id       | integer    | null: false                    |
-| delivery_fee_id    | integer    | null: false                    |
-| region_id          | integer    | null: false                    |
-| delivery_within_id | integer    | null: false                    |
+| category           | integer    | null: false                    |
+| condition          | integer    | null: false                    |
+| delivery_fee       | integer    | null: false                    |
+| region             | integer    | null: false                    |
+| delivery_within    | integer    | null: false                    |
 | price              | integer    | null: false                    |
 | user               | references | null: false, foreign_key: true |
 
@@ -43,8 +43,8 @@
 
 | Column             | Type       | Options                        |
 |--------------------|------------|--------------------------------|
-| user_id            | references | null: false, foreign_key: true |
-| item_id            | references | null: false, foreign_key: true |
+| user               | references | null: false, foreign_key: true |
+| item               | references | null: false, foreign_key: true |
 
 ### Association
 
@@ -57,10 +57,10 @@
 | Column             | Type       | Options                        |
 |--------------------|------------|--------------------------------|
 | post_code          | string     | null: false                    |
-| address1_id        | integer    | null: false                    |
+| region             | integer    | null: false                    |
+| address1           | string     | null: false                    |
 | address2           | string     | null: false                    |
-| address3           | text       | null: false                    |
-| address4           | text       |                                |
+| address3           | string     |                                |
 | phone              | string     | null: false                    |
 | record             | references | null: false, foreign_key: true |
 

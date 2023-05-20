@@ -26,11 +26,11 @@
 |--------------------|------------|--------------------------------|
 | name               | string     | null: false                    |
 | detail             | text       | null: false                    |
-| category           | integer    | null: false                    |
-| condition          | integer    | null: false                    |
-| delivery_fee       | integer    | null: false                    |
-| region             | integer    | null: false                    |
-| delivery_within    | integer    | null: false                    |
+| category_id        | integer    | null: false                    |
+| condition_id       | integer    | null: false                    |
+| delivery_fee_id    | integer    | null: false                    |
+| region_id          | integer    | null: false                    |
+| delivery_within_id | integer    | null: false                    |
 | price              | integer    | null: false                    |
 | user               | references | null: false, foreign_key: true |
 
@@ -57,7 +57,7 @@
 | Column             | Type       | Options                        |
 |--------------------|------------|--------------------------------|
 | post_code          | string     | null: false                    |
-| region             | integer    | null: false                    |
+| region_id          | integer    | null: false                    |
 | address1           | string     | null: false                    |
 | address2           | string     | null: false                    |
 | address3           | string     |                                |

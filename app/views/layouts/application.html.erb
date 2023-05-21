@@ -2,88 +2,16 @@
 <html>
 
 <head>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Furima39154</title>
+  <title>Furima</title>
   <%= csrf_meta_tags %>
   <%= csp_meta_tag %>
   <script type="text/javascript" src="https://js.pay.jp/v1/"></script>
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP:400,700,900&display=swap" rel="stylesheet">
+  <%= stylesheet_link_tag 'application', media: 'all'%>
+  <%= javascript_pack_tag 'application' %>
 </head>
 
 <body>
-  <header class="top-page-header">
-  <div class="search-bar-contents">
-    <a href="/"><img class="furima-icon" src="/assets/furima-logo-color.png"></a>
-    <form class="search-form" action="#">
-      <input class="input-box" placeholder="キーワードから探す">
-      <button class="search-button">
-        <img class="search-icon" src="/assets/search.png">
-      </button>
-    </form>
-  </div>
-  <div class="nav">
-    <ul class="lists-left">
-      <li><a class="category-list" href="#">カテゴリー</a></li>
-      <li><a class="brand-list" href="#">ブランド</a></li>
-    </ul>
-    <ul class="lists-right">
-      <li><a class="login" href="/users/sign_in">ログイン</a></li>
-      <li><a class="sign-up" href="/users/sign_up">新規登録</a></li>
-    </ul>
-  </div>
-  </header>
-
-<main>
- <%= yield %>
-</main>
- 
-<div class="ad-footer-contents">
-  <p class="ad-footer-explain">
-    だれでもかんたん、人生を変えるフリマアプリ
-  </p>
-  <h2 class="ad-footer-title">
-    今すぐ無料ダウンロード！
-  </h2>
-  <div class='store-btn'>
-      <%= link_to image_tag("app-store.svg", class:"apple-btn"), "#" %>
-      <%= link_to image_tag("google-play.png", class:"google-btn"), "#" %>
-  </div>
-</div>
-
-<div class="footer">
-  <div class="footer-contents">
-    <div class="furima-details">
-      <h2 class="footer-content-head">FURIMAについて</h2>
-      <ul>
-        <li><a class="footer-link" href="#">会社概要（運営会社)</a></li>
-        <li><a class="footer-link" href="#">プライバシーポリシー</a></li>
-        <li><a class="footer-link" href="#">FURIMA利用規約</a></li>
-        <li><a class="footer-link" href="#">ポイントに関する特約</a></li>
-      </ul>
-    </div>
-    <div class="furima-details">
-      <h2 class="footer-content-head">FURIMAを見る</h2>
-      <ul>
-        <li><a class="footer-link" href="#">カテゴリー一覧</a></li>
-        <li><a class="footer-link" href="#">ブランド一覧</a></li>
-      </ul>
-    </div>
-    <div class="furima-details">
-      <h2 class="footer-content-head">FURIMAについて</h2>
-      <ul>
-        <li><a class="footer-link" href="#">FURIMAガイド</a></li>
-        <li><a class="footer-link" href="#">FURIMAロゴ利用ガイドライン</a></li>
-        <li><a class="footer-link" href="#">お知らせ</a></li>
-      </ul>
-    </div>
-  </div>
-  <a href="#"><img class="logo-white" src="/assets/furima-logo-white.png"></a>
-  <p>© FURIMA</p>
-</div>
-
-
+  <%= yield %>
 </body>
 
 </html>

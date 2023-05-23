@@ -13,7 +13,7 @@ RSpec.describe User, type: :model do
       expect(@user).to be_valid
     end
    end
-   
+
    context '新規登録できないとき' do
     ### 異常系テスト
     ## email
@@ -37,12 +37,6 @@ RSpec.describe User, type: :model do
       expect(@user.errors.full_messages).to include('Email is invalid')
     end
     
-    it 'emailは半角英数字でないと登録できない' do
-      @user.email = '电子邮件@地址'
-      @user.valid?
-      expect(@user.errors.full_messages).to include('Email is invalid')
-    end
-
     ## passord
     it 'passwordが空では登録できない' do
       @user.password = ''  

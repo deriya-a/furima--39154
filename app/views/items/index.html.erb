@@ -130,6 +130,9 @@
         <div class='item-img-content'>
           <%= image_tag "item-sample.png", class: "item-img" %>
 
+            <%# 出品機能実装後、部分テンプレートで商品一覧を表示する？ %>
+           <%#= render partial: 'item', collection: @items %>
+
           <%# 商品が売れていればsold outを表示しましょう %>
           <div class='sold-out'>
             <span>Sold Out!!</span>

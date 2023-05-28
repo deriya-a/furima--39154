@@ -8,6 +8,8 @@ class Item < ApplicationRecord
   validates :region_id,          presence: { message: '選択してください' }
   validates :delivery_within_id, presence: { message: '選択してください' }
   validates :price,              presence: { message: '入力してください' }
+  validates :price, presence: { message: '入力してください' }, numericality: { greater_than_or_equal_to: 300, less_than_or_equal_to: 9_999_999 }
+
  
 
   belongs_to :user

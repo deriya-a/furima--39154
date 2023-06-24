@@ -1,5 +1,11 @@
+//window.addEventListener('load', () => {
+  //const inputField = document.getElementById('item-price');
+  //console.log(inputField);
+//});
+
 // HTML要素の取得
 const inputField = document.getElementById('item-price');
+
 const resultElement = document.getElementById('add-tax-price');
 
 // イベントリスナーの設定

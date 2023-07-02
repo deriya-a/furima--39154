@@ -95,7 +95,13 @@ RSpec.describe Item, type: :model do
        @item.valid?
        expect(@item.errors.full_messages).to include("Price is not a number")
      end
-    
+
+     ## user
+     it 'userが紐付いていなければ登録できない' do
+      @item.user_id = ''
+      @item.valid?
+      expect(@item.errors.full_messages).to include("User 入力してください")
+    end
     end
   end
 end

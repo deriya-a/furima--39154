@@ -7,7 +7,7 @@ class Item < ApplicationRecord
   validates :delivery_fee_id,    exclusion: { in: [1], message: '選択してください' }, presence: true
   validates :region_id,          exclusion: { in: [1], message: '選択してください' }, presence: true
   validates :delivery_within_id, exclusion: { in: [1], message: '選択してください' }, presence: true
-  validates :price, presence: { message: '入力してください' }, numericality: { greater_than_or_equal_to: 300, less_than_or_equal_to: 9_999_999 }
+  validates :price, presence: { message: '入力してください' }, numericality: { only_integer: true, greater_than_or_equal_to: 300, less_than_or_equal_to: 9_999_999 }
 
  
 

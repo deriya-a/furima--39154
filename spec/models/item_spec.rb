@@ -99,9 +99,9 @@ RSpec.describe Item, type: :model do
      ## user
      it 'userが紐付いていなければ登録できない' do
       @item.user_id = ''
-      @item.valid?
-      
+      @item.valid?      
     end
+    
     end
   end
 end

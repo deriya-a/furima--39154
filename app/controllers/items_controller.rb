@@ -4,7 +4,7 @@ class ItemsController < ApplicationController
   # before_action :ensure_author, only: [:edit, :update]
 
   def index
-    @items = Item.all
+    @items = Item.all.order("created_at DESC")
   end
 
   def new

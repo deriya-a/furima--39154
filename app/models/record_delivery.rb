@@ -1,6 +1,6 @@
 class RecordDelivery
   include ActiveModel::Model
-  attr_accessor :user_id, :item_id, :post_code, :region_id, :address1, :address2, :address3, :phone, :record_id
+  attr_accessor :user_id, :item_id, :post_code, :region_id, :address1, :address2, :address3, :phone, :record_id, :token
 
   with_options presence: true do
     validates :user_id
@@ -11,6 +11,7 @@ class RecordDelivery
     validates :address2
     validates :phone
     validates :record_id   
+    validates :token
   end
   validates :address3
 

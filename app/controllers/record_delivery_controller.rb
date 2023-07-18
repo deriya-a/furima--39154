@@ -9,14 +9,15 @@ class RecordDeliveryController < ApplicationController
   def new
   end
 
-  def create
-    @record_delivery = RecordDelivery.new(record_params)
+  def create     
+    @record_delivery = RecordDelivery.new(record_params)    
     if @record_delivery.valid?
-      pay_item
+      #pay_item
        @record_delivery.save
        redirect_to root_path
     else
-       render :new  
+      @item = Item.find(params[:item_id])   
+      render :index         
     end
   end
 
@@ -24,7 +25,7 @@ class RecordDeliveryController < ApplicationController
   private
 
   def record_params
-    params.require(:record_delivery).permit(:post_code, :region_id, :address1, :address2, :address3, :phone).merge(user_id: current_user.id, item_id: curernt_item.id)
+    params.require(:record_delivery).permit(:post_code, :region_id, :address1, :address2, :address3, :phone).merge(user_id: current_user.id, item_id: params[:item_id])
   end
 
   def pay_item

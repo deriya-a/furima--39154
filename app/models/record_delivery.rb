@@ -1,6 +1,6 @@
 class RecordDelivery
   include ActiveModel::Model
-  attr_accessor :user_id, :item_id, :post_code, :region_id, :address1, :address2, :address3, :phone, :record_id, :token
+  attr_accessor :user_id, :item_id, :post_code, :region_id, :address1, :address2, :address3, :phone, :token
 
   with_options presence: true do
     validates :user_id
@@ -9,8 +9,7 @@ class RecordDelivery
     validates :region_id, numericality: {other_than: 1, message: "can't be blank"}
     validates :address1
     validates :address2
-    validates :phone
-    validates :record_id   
+    validates :phone   
     #validates :token
   end
   

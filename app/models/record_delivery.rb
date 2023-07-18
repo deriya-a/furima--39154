@@ -11,10 +11,9 @@ class RecordDelivery
     validates :address2
     validates :phone
     validates :record_id   
-    validates :token
+    #validates :token
   end
-  validates :address3
-
+  
   def save
     # 購入情報を保存し、変数recordに代入する
     record = Record.create(user_id: user_id, item_id: item_id)

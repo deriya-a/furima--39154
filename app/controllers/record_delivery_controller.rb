@@ -1,10 +1,12 @@
 class RecordDeliveryController < ApplicationController
   before_action :authenticate_user!
-  def index
+
+  def index    
+    @item = Item.find(params[:item_id])    
+    @record_delivery = RecordDelivery.new
   end
 
   def new
-    @record_delivery = RecordDelivery.new
   end
 
   def create

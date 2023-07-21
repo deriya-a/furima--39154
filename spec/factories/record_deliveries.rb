@@ -3,7 +3,7 @@ FactoryBot.define do
     user_id { '1' }
     item_id { '1' }
     post_code { '123-4567' }
-    region_id { '1' }
+    region_id { '2' }
     address1 { '港区' }
     address2 { '白金台' }
     address3 { 'マンション１０１' }

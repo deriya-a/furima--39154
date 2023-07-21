@@ -7,6 +7,6 @@ FactoryBot.define do
     address1 { '港区' }
     address2 { '白金台' }
     address3 { 'マンション１０１' }
-    phone { 09012345678 }
+    phone { '09012345678' }
   end
 end

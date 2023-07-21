@@ -9,7 +9,7 @@ class RecordDeliveryController < ApplicationController
   def new
   end
 
-  def create     
+  def create        
     @record_delivery = RecordDelivery.new(record_params)    
     if @record_delivery.valid?
       #pay_item

@@ -11,6 +11,7 @@ class RecordDelivery
     validates :address2
     validates :phone, numericality: { only_integer: true, greater_than_or_equal_to: 1000000000, less_than_or_equal_to: 99999999999 }
     validates :token
+    
   end
   
   def save

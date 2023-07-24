@@ -13,6 +13,11 @@ RSpec.describe RecordDelivery, type: :model do
       it 'user_id, item_id, post_code, region_id, address1, address2, address3, phone, tokenが正しく存在すれば登録できる' do
         expect(@record_delivery).to be_valid
       end
+
+      it 'address3が空欄でもその他が正しく存在すれば登録できる' do
+        @record_delivery.address3 = ''
+        expect(@record_delivery).to be_valid
+      end
     end
 
     context '購入できないとき' do

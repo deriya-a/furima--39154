@@ -71,25 +71,25 @@ RSpec.describe RecordDelivery, type: :model do
       it 'phoneが10桁未満では登録できない' do
         @record_delivery.phone = '123456789'
         @record_delivery.valid?
-        expect(@record_delivery.errors.full_messages).to include("Phone must be greater than or equal to 1000000000")
+        expect(@record_delivery.errors.full_messages).to include("Phone must be 10 digits or 11 digits number")
       end
 
       it 'phoneが11桁を超えたら登録できない' do
         @record_delivery.phone = '123456789012'
         @record_delivery.valid?
-        expect(@record_delivery.errors.full_messages).to include("Phone must be less than or equal to 99999999999")
+        expect(@record_delivery.errors.full_messages).to include("Phone must be 10 digits or 11 digits number")
       end
 
       it 'phoneが数字以外だと登録できない（英字）' do
         @record_delivery.phone = 'aaaaaaaaaa'
         @record_delivery.valid?
-        expect(@record_delivery.errors.full_messages).to include("Phone is not a number")
+        expect(@record_delivery.errors.full_messages).to include("Phone must be 10 digits or 11 digits number")
       end
 
       it 'phoneに数字以外が入っていると登録できない' do
         @record_delivery.phone = '090-123-456'
         @record_delivery.valid?
-        expect(@record_delivery.errors.full_messages).to include("Phone is not a number")
+        expect(@record_delivery.errors.full_messages).to include("Phone must be 10 digits or 11 digits number")
       end
 
       ## token

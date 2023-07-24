@@ -9,7 +9,7 @@ class RecordDelivery
     validates :region_id, numericality: {other_than: 1, message: "can't be blank"}
     validates :address1
     validates :address2
-    validates :phone, numericality: { only_integer: true, greater_than_or_equal_to: 1000000000, less_than_or_equal_to: 99999999999 }
+    validates :phone, format: { with: /\A\d{10,11}\z/, message: 'Phone must be 10 digits or 11 digits number' }
     validates :token
     
   end

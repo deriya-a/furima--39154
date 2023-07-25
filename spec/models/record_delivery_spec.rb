@@ -26,12 +26,14 @@ RSpec.describe RecordDelivery, type: :model do
       it 'userが紐付いていなければ登録できない' do
         @record_delivery.user_id = ''
         @record_delivery.valid?
+        expect(@record_delivery.errors.full_messages).to include("User can't be blank")
       end
 
       ## item_id
       it 'itemが紐付いていなければ登録できない' do
         @record_delivery.item_id = ''
         @record_delivery.valid?
+        expect(@record_delivery.errors.full_messages).to include("Item can't be blank")
       end
 
       ## post_code

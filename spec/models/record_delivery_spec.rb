@@ -103,6 +103,7 @@ RSpec.describe RecordDelivery, type: :model do
       it 'tokenがなければ登録できない' do
         @record_delivery.token = ''
         @record_delivery.valid?
+        expect(@record_delivery.errors.full_messages).to include("Token can't be blank")
       end
      
     end

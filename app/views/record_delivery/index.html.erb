@@ -41,9 +41,7 @@
       <div class="form-group">
         <div class='form-text-wrap'>
           <label class="form-text">カード情報</label>
-          <span class="indispensable">必須</span>
-        
-        <%#= f.text_field :cardNumber, class:"input-default", id:"number-form", placeholder:"カード番号(半角英数字)", maxlength:"16" %>       
+          <span class="indispensable">必須</span>                  
          <div id="number-form" class="input-default"></div>
         </div>
         <div class='available-card'>
@@ -59,11 +57,7 @@
           <span class="indispensable">必須</span>
         
         <div class='input-expiration-date-wrap'>
-        <div id="expiry-form" class="input-default"></div>
-          <%#= f.text_area :cardExpiry, class:"input-expiration-date", id:"expiry-form", placeholder:"月" %>
-          <%#<p>月</p>%>
-          <%#= f.text_area :cardExpiry, class:"input-expiration-date", id:"card-exp-year", placeholder:"年" %>
-          <%#<p>年</p>%>
+        <div id="expiry-form" class="input-default"></div>        
         </div>
         </div>
       </div>
@@ -72,8 +66,7 @@
           <label class="form-text">セキュリティコード</label>
           <span class="indispensable">必須</span>
         
-        <div id="cvc-form" class="input-default"></div>
-        <%#= f.text_field :cardCvc, class:"input-default", id:"cvc-form", placeholder:"カード背面4桁もしくは3桁の番号", maxlength:"4" %>
+        <div id="cvc-form" class="input-default"></div>        
         </div>
       </div>
     </div>

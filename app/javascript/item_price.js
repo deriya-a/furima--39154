@@ -11,7 +11,7 @@ window.addEventListener('load', () => {
   
 
   const profitAmount = document.getElementById("profit")
-  const salesProfit = inputValue - addTaxPrice
+  const salesProfit = inputValue - roundedTaxPrice 
   const roundedProfit = Math.floor(salesProfit)
   profitAmount.innerHTML = roundedProfit
   
